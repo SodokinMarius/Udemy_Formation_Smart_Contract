@@ -1,50 +1,50 @@
 pragma solidity 0.8.17;
 
-library SafeMath { //DEclaration of the library with key word library
+library SafeMath {
 
-    function add(int a, int b) public pure returns(int)
+    function add(uint256 a, uint256 b) public pure returns(uint256)
     {
-        int som = a + b;
+        uint256 som = a + b;
         assert(som>=b);
         return som;
     }
 
-    function mutltiply(int a, int b) internal pure returns(int256)
+    function mutltiply(uint256 a, uint256 b) internal pure returns(uint256)
     {
-        int256 produit =  a * b;
+        uint256 produit =  a * b;
         assert(produit >=a);
         return produit;
     }
 
-    function max(int a,int b) internal pure returns(int)
+    function max(uint256 a,uint256 b) internal pure returns(uint256)
     {
         return (a > b) ? a : b;
     }
 
 
-    function min(int a,int b) internal pure returns(int)
+    function min(uint256 a,uint256 b) internal pure returns(uint256)
     {
         return (a < b) ? a : b;
     }
 
-    function sub(int a, int b ) internal pure returns(int)
+    function sub(uint256 a, uint256 b ) internal pure returns(uint256)
     {
         return max(a,b) - min(a,b);
        
     }
 
-    function div(int a,int b) public pure returns(int)
+    function div(uint256 a,uint256 b) public pure returns(uint256)
     {
         assert(a!=0);
         assert(b!=0);
         return max(a,b) / min(a,b);
     }
-    function factorial(int a) public pure returns(int)
+    function factorial(uint256 a) public pure returns(uint256)
     {
         assert(a>0);
         require(a<=57,"Number is too much !!");
-        int fact = 1;
-        for(int i=0;i<a;i++)
+        uint256 fact = 1;
+        for(uint256 i=0;i<a;i++)
         {
             fact *= i;
         }
