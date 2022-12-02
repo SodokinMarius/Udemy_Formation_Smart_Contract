@@ -11,13 +11,13 @@ contract Bank
     function deposit() public payable{
         require(accounts[msg.sender]+msg.value >= accounts[msg.sender],"Overflow error");
         int _amount = int(msg.value);
-         accounts[msg.sender] = accounts[msg.sender].add(_amount);
+         accounts[msg.sender] = add(accounts[msg.sender],_amount);
     }
 
     function withdraw(uint _amount) public {
         require(_amount <= accounts[msg.sender],"The amount is not sufficient");
         require(_amount>0,"Amount must be greater than 0");
-        accounts[msg.sender] = accounts[msg.sender].sub(_amount);
+        accounts[msg.sender] = sub(accounts[msg.sender],_amount);
 
     }
 
