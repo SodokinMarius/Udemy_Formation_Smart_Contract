@@ -3,7 +3,6 @@ pragma solidity 0.8.17;
 import "https://github.com/SodokinMarius/Udemy_Formation_Smart_Contract/blob/main/Librairie.sol";
 
 
-
 contract Bank 
 {
     mapping(address => uint256) public accounts;
